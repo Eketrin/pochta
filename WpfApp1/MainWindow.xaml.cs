@@ -66,6 +66,7 @@ namespace WpfApp1
         {
             foreach (var item in sortirovka)
             {
+                
                 if (FirstL(item.Key) == Search.Text)
                 {
                     Result.Text += item.Key + " " + item.Value + "\n";
