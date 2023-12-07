@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -64,18 +61,16 @@ namespace WpfApp1
         }
         private void DoResult_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var item in sortirovka)
+            
+            foreach (var item in sortirovka.OrderByDescending(x => x.Value))
             {
-                
                 if (FirstL(item.Key) == Search.Text)
                 {
                     Result.Text += item.Key + " " + item.Value + "\n";
                 }
                 else continue;
             }
-
         }
-
         private void Search_TextChanged(object sender, TextChangedEventArgs e)
         {
 
